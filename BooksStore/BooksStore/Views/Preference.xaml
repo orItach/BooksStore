@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ExtendView="clr-namespace:BooksStore.ExtendView"
+             x:Class="BooksStore.Views.Preference">
+    <!--<StackLayout>
+        <ExtendView:TLScrollView Orientation="Horizontal" ItemsSource="{Binding Items}" HeightRequest="100">
+            <ExtendView:TLScrollView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="5">
+                            <Label Text="{Binding Text}">
+                                
+                            </Label>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ExtendView:TLScrollView.ItemTemplate>
+        </ExtendView:TLScrollView>
+    </StackLayout>-->
+    <!--<ScrollView Orientation="Vertical"
+                x:Name="MainCategoriesList">
+        <StackLayout x:Name="MainCategoriesStack">
+            <ScrollView Orientation="Horizontal">
+                <StackLayout x:Name="InnerStack">
+                    <Label Text="{Binding Topic}"/>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ScrollView>-->
+
+    <StackLayout>
+        <Label WidthRequest="100" Text="Hello"/>
+    </StackLayout>
+    <!--<ListView x:Name="MyListView"
+            ItemsSource="{Binding MainCategories}"
+            ItemTapped="Handle_ItemTapped"
+            CachingStrategy="RecycleElement">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout>
+                        <ScrollView
+                                  Orientation="Horizontal">
+                                        <StackLayout>
+                                            <Label WidthRequest="100" Text="{Binding Topic}"/>
+                                        </StackLayout>
+                        </ScrollView>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>-->
+</ContentPage>
