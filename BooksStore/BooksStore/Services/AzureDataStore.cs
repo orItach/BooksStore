@@ -78,5 +78,15 @@ namespace BooksStore.Services
 
             return response.IsSuccessStatusCode;
         }
+
+        public Task<IEnumerable<Book>> GetBooksAsync(bool forceRefresh = false)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<MainCategory>> GetMainCategoriesAsync(bool forceRefresh = false)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

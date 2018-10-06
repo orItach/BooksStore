@@ -10,8 +10,57 @@ namespace BooksStore.Services
     {
         List<Item> items;
 
+        List<Book> Books;
+        List<MainCategory> MainCategories;
+
         public MockDataStore()
         {
+            Books = new List<Book>();
+            MainCategories = new List<MainCategory>();
+            var mockBooks = new List<Book>
+            {
+                new Book { Name = "First item"},
+                new Book { Name = "Second item" },
+                new Book { Name = "Third item" },
+                new Book { Name = "Fourth item" },
+                new Book { Name = "Fifth item" },
+                new Book { Name = "Sixth item" },
+            };
+
+            foreach (var item in mockBooks)
+            {
+                Books.Add(item);
+            }
+
+            var mockMainCategories = new List<MainCategory>
+            {
+                new MainCategory { Topic = "First item",
+                    SubCategories = new List<SubCategory>{
+                        new SubCategory { Topic = "SSecond item" },
+                        new SubCategory { Topic = "SThird item" },
+                        new SubCategory { Topic = "SFourth item" },
+                        new SubCategory { Topic = "SFifth item" },
+                        new SubCategory { Topic = "SSixth item" },
+                } },
+                new MainCategory { Topic = "Second item" ,SubCategories = new List<SubCategory>{
+                new SubCategory { Topic = "SSecond item" },
+                new SubCategory { Topic = "SThird item" },
+                new SubCategory { Topic = "SFourth item" },
+                new SubCategory { Topic = "SFifth item" },
+                new SubCategory { Topic = "SSixth item" },
+                } }
+                //new MainCategory { Topic = "Third item" },
+                //new MainCategory { Topic = "Fourth item" },
+                //new MainCategory { Topic = "Fifth item" },
+                //new MainCategory { Topic = "Sixth item" },
+            };
+
+            foreach (var item in mockMainCategories)
+            {
+                MainCategories.Add(item);
+            }
+
+
             items = new List<Item>();
             var mockItems = new List<Item>
             {
@@ -28,6 +77,21 @@ namespace BooksStore.Services
                 items.Add(item);
             }
         }
+
+        #region Books
+        public async Task<IEnumerable<Book>> GetBooksAsync(bool forceRefresh = false)
+        {
+            return await Task.FromResult(Books);
+        }
+
+        #endregion
+
+        #region Categories
+        public async Task<IEnumerable<MainCategory>> GetMainCategoriesAsync(bool forceRefresh = false)
+        {
+            return await Task.FromResult(MainCategories);
+        }
+        #endregion
 
         public async Task<bool> AddItemAsync(Item item)
         {
